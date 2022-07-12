@@ -81,19 +81,14 @@ function handleClickNewCatForm(event) {
     hideNewCatForm();
   }
 }
-<<<<<<< HEAD
-function resetForm() {
-  inputDesc.value = "";
-  inputPhoto.value = "";
-  inputName.value = "";
-  inputRace.value = "";
-}
-=======
 
 //Limpiar valores de los inputs
 
-function clearInputs() {inputDesc.value = ''; inputPhoto.value = '', inputName.value = ''; inputRace.value = ''};
->>>>>>> 0fd673391b4454522d979417e13283aa46d6b58d
+function clearInputs() {
+  inputDesc.value = "";
+  (inputPhoto.value = ""), (inputName.value = "");
+  inputRace.value = "";
+}
 
 //Adicionar nuevo gatito
 function addNewKitten(event) {
@@ -120,11 +115,7 @@ function addNewKitten(event) {
   console.log(kittenDataList);
 
   renderKittenList(kittenDataList);
-<<<<<<< HEAD
-  resetForm();
-=======
   clearInputs();
->>>>>>> 0fd673391b4454522d979417e13283aa46d6b58d
 }
 
 //Cancelar la búsqueda de un gatito
@@ -142,10 +133,11 @@ function filterKitten(event) {
   const descrSearchText = input_search_desc.value;
   listElement.innerHTML = "";
 
-  const filteredDesc = kittenDataList.filter((kitten) => kitten.desc.includes(descrSearchText));
+  const filteredDesc = kittenDataList.filter((kitten) =>
+    kitten.desc.includes(descrSearchText)
+  );
   renderKittenList(filteredDesc);
 }
-
 
 //Mostrar el litado de gatitos en ell HTML
 renderKittenList(kittenDataList);
