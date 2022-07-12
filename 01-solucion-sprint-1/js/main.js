@@ -81,19 +81,10 @@ function handleClickNewCatForm(event) {
     hideNewCatForm();
   }
 }
-<<<<<<< HEAD
-function resetForm() {
-  inputDesc.value = "";
-  inputPhoto.value = "";
-  inputName.value = "";
-  inputRace.value = "";
-}
-=======
 
 //Limpiar valores de los inputs
 
 function clearInputs() {inputDesc.value = ''; inputPhoto.value = '', inputName.value = ''; inputRace.value = ''};
->>>>>>> 0fd673391b4454522d979417e13283aa46d6b58d
 
 //Adicionar nuevo gatito
 function addNewKitten(event) {
@@ -120,11 +111,7 @@ function addNewKitten(event) {
   console.log(kittenDataList);
 
   renderKittenList(kittenDataList);
-<<<<<<< HEAD
-  resetForm();
-=======
   clearInputs();
->>>>>>> 0fd673391b4454522d979417e13283aa46d6b58d
 }
 
 //Cancelar la búsqueda de un gatito
