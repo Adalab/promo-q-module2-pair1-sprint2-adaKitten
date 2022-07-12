@@ -129,10 +129,11 @@ function filterKitten(event) {
   const descrSearchText = input_search_desc.value;
   listElement.innerHTML = "";
 
-  const filteredDesc = kittenDataList.filter((kitten) => kitten.desc.includes(descrSearchText));
+  const filteredDesc = kittenDataList.filter((kitten) =>
+    kitten.desc.includes(descrSearchText)
+  );
   renderKittenList(filteredDesc);
 }
-
 
 //Mostrar el litado de gatitos en ell HTML
 renderKittenList(kittenDataList);
