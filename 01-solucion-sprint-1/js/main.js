@@ -16,9 +16,6 @@ const labelMesageError = document.querySelector(".js-label-error");
 const input_search_desc = document.querySelector(".js_in_search_desc");
 const input_search_race = document.querySelector(".js_in_search_race");
 
-const GITHUB_USER = "lupeMorales";
-const SERVER_URL = `https://adalab-api.herokuapp.com/api/kittens/${GITHUB_USER}`;
-
 //Objetos con cada gatito
 const kittenData_1 = {
   image: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
@@ -43,9 +40,11 @@ const kittenData_3 = {
 
 let kittenDataList = [];
 
-//Funciones
 
-//petición al servidor
+//Petición al servidor
+const GITHUB_USER = "lupeMorales";
+const SERVER_URL = `https://adalab-api.herokuapp.com/api/kittens/${GITHUB_USER}`;
+
 fetch(`https://adalab-api.herokuapp.com/api/kittens/${GITHUB_USER}`, {
   method: "GET",
   headers: { "Content-Type": "application/json" },
@@ -57,8 +56,10 @@ fetch(`https://adalab-api.herokuapp.com/api/kittens/${GITHUB_USER}`, {
   });
 
   
+//LocalStorage
+const kittenListStored = (localStorage.setItem('listado-de-gatos', JSON.stringify(kittenDataList)));
 
-
+//Funciones
 function renderKitten(kittenData) {
   const kitten = `<li class="card">
     <article>
@@ -102,7 +103,6 @@ function handleClickNewCatForm(event) {
 }
 
 //Limpiar valores de los inputs
-
 function clearInputs() {inputDesc.value = ''; inputPhoto.value = '', inputName.value = ''; inputRace.value = ''};
 
 //Adicionar nuevo gatito
@@ -161,7 +161,7 @@ function filterKitten(event) {
   renderKittenList(kittenListFiltered);
 }
 
-//Mostrar el litado de gatitos en ell HTML
+//Mostrar el litado de gatitos en el HTML
 renderKittenList(kittenDataList);
 
 //Eventos
