@@ -101,11 +101,7 @@ function handleClickNewCatForm(event) {
 
 //Limpiar valores de los inputs
 
-function clearInputs() {
-  inputDesc.value = "";
-  (inputPhoto.value = ""), (inputName.value = "");
-  inputRace.value = "";
-}
+function clearInputs() {inputDesc.value = ''; inputPhoto.value = '', inputName.value = ''; inputRace.value = ''};
 
 //Adicionar nuevo gatito
 function addNewKitten(event) {
