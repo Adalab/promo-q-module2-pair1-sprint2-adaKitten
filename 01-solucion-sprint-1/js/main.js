@@ -46,23 +46,25 @@ let kittenDataList = [];
 //Funciones
 
 //petición al servidor
-fetch(SERVER_URL, {
+fetch(`https://adalab-api.herokuapp.com/api/kittens/${GITHUB_USER}`, {
   method: "GET",
   headers: { "Content-Type": "application/json" },
 })
   .then((response) => response.json())
   .then((data) => {
     kittenDataList = data.results;
+    renderKittenList (kittenDataList);
   });
-console.log(kittenDataList);
-//Completa el código;
+
+  
+
 
 function renderKitten(kittenData) {
   const kitten = `<li class="card">
     <article>
       <img
         class="card_img"
-        src=${kittenData.image}
+        src=${kittenData.url}
         alt="gatito"
       />
       <h3 class="card_title">${kittenData.name}</h3>
@@ -119,7 +121,7 @@ function addNewKitten(event) {
     }
   }
   const newKittenDataObject = {
-    image: valuePhoto,
+    url: valuePhoto,
     name: valueName,
     desc: valueDesc,
     race: valueRace,
